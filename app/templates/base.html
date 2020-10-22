@@ -1,0 +1,53 @@
+
+{% extends "bootstrap/base.html" %}
+
+    {% block title %}
+        {% if title %}
+            {{ title }} - Home
+        {% else %}
+            Welcome to Paybot!
+        {% endif %}
+    {% endblock %}
+
+    {% block styles -%}
+    {{super()}}
+    <!--link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css" integrity="sha384-v2Tw72dyUXeU3y4aM2Y0tBJQkGfplr39mxZqlTBDUZAb9BGoC40+rdFCG0m10lXk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/fontawesome.css" integrity="sha384-q3jl8XQu1OpdLgGFvNRnPdj5VIlCvgsDQTQB6owSOHWlAurxul7f+JpUOVdAiJ5P" crossorigin="anonymous"-->
+    <style>
+        body {
+          margin: 10px;
+        }
+
+        a:hover, a:visited, a:link, a:active {
+          text-decoration: none;
+        }
+
+        .collapse-group {
+          padding: 1px;
+        }
+
+        .panel {
+          margin-bottom: 10px;
+        }
+
+        .panel-title .trigger:before {
+          content: '\e082';
+          font-family: 'Glyphicons Halflings';
+          vertical-align: text-bottom;
+        }
+
+        .panel-title .trigger.collapsed:before {
+          content: '\e081';
+        }
+    </style>
+    {% endblock styles %}
+
+    {% block content %}
+        <div class="container-fluid">
+            <p>Paybot: <a href="/index">Home</a></p>
+
+              <!-- Main content after this -->
+              {% block posts %}{% endblock %}
+
+        </div>
+    {% endblock %}

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <!-- script>window.jQuery || document.write('<script src="{{url_for('static', filename='jquery.js') }}">\x3C/script>')</script-->
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+    <style>
+        body {
+          margin: 50px;
+        }
+
+        a:hover, a:visited, a:link, a:active {
+          text-decoration: none;
+        }
+
+        .controls {
+          margin-bottom: 10px;
+        }
+
+        .collapse-group {
+          padding: 10px;
+          border: 1px solid darkgrey;
+          margin-bottom: 10px;
+        }
+
+        .panel-title .trigger:before {
+          content: '\e082';
+          font-family: 'Glyphicons Halflings';
+          vertical-align: text-bottom;
+        }
+
+        .panel-title .trigger.collapsed:before {
+          content: '\e081';
+        }
+    </style>
+
+    <script type="text/javascript">
+        $(".open-button").on("click", function() {
+          $(this).closest('.collapse-group').find('.collapse').collapse('show');
+        });
+
+        $(".close-button").on("click", function() {
+          $(this).closest('.collapse-group').find('.collapse').collapse('hide');
+        });
+    </script>
+
+</head>
+<body>
+
+<h2>Bootstrap: Multiple collapse panels with open/close all buttons</h2>
+
+    <script type="text/javascript">
+        $(".open-button").on("click", function() {
+          $(this)
+            .closest(".collapse-group")
+            .find(".collapse")
+            .collapse("show");
+        });
+
+        $(".close-button").on("click", function() {
+          $(this)
+            .closest(".collapse-group")
+            .find(".collapse")
+            .collapse("hide");
+        });
+    </script>
+
+<div class="collapse-group">
+  <div class="controls">
+    <button class="btn btn-primary open-button" type="button">
+      Open all
+    </button>
+    <button class="btn btn-primary close-button" type="button">
+      Close all
+    </button>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed">
+          Collapsible Group Item #1
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi molestiae dolorum, soluta temporibus vero perferendis quo odit eaque cum fugiat nihil earum error vitae libero nostrum sed ipsam, beatae ea.
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" class="trigger collapsed">
+          Collapsible Group Item #2
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+        Sunt quia aperiam, officiis tempora quis quasi fugit ab ipsa quo expedita reiciendis quod iusto! Enim delectus unde voluptatem officiis molestiae repudiandae.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="collapse-group">
+  <div class="controls">
+    <button class="btn btn-primary open-button" type="button">
+      Open all
+    </button>
+    <button class="btn btn-primary close-button" type="button">
+      Close all
+    </button>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingThree">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree" class="trigger">
+          Collapsible Group Item #3
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi molestiae dolorum, soluta temporibus vero perferendis quo odit eaque cum fugiat nihil earum error vitae libero nostrum sed ipsam, beatae ea.
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingFour">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour" class="trigger">
+          Collapsible Group Item #4
+        </a>
+      </h4>
+    </div>
+    <div id="collapseFour" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingFour">
+      <div class="panel-body">
+        Sunt quia aperiam, officiis tempora quis quasi fugit ab ipsa quo expedita reiciendis quod iusto! Enim delectus unde voluptatem officiis molestiae repudiandae.
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+</body>
+</html>

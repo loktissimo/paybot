@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block posts %}
+
+    {% for date in dates %}
+        <hr>
+        <h4>{{ date.time }}</h4>
+        <div class="collapse-group">
+
+          {% for post in posts %}
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+              <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" href="#{{ post.author.username }}" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed">
+                  {{ post.author.username }} говорит:
+                </a>
+              </h4>
+            </div>
+            <div id="{{ post.author.username }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+              <div class="panel-body">
+                  {{ post.body }}
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+
+        </div>
+    {% endfor %}
+
+{% endblock %}
